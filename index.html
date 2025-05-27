@@ -7,7 +7,7 @@
     <link rel="icon" href="https://cdn.ryusei.f5.si/havenmc.webp" type="image/webp">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #6366F1;
@@ -31,7 +31,7 @@
         }
 
         body {
-            font-family: 'Noto Sans JP', 'Inter', sans-serif;
+            font-family: 'Noto Sans JP', 'Noto Sans KR', 'Inter', sans-serif;
             background-color: var(--light);
             color: var(--dark);
             line-height: 1.6;
@@ -252,6 +252,11 @@
                 background-color: #3730a3;
             }
 
+            .language-dropdown-btn .globe-icon {
+                margin-right: 8px;
+                font-size: 1rem;
+            }
+
             .language-dropdown-btn svg {
                 margin-left: 8px;
                 width: 16px;
@@ -269,7 +274,7 @@
             right: 0;
             top: 100%;
             background-color: white;
-            min-width: 160px;
+            min-width: 180px;
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
             z-index: 1000;
             border-radius: 4px;
@@ -284,7 +289,9 @@
             color: var(--dark);
             padding: 12px 16px;
             text-decoration: none;
-            display: block;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             cursor: pointer;
             transition: all 0.2s;
             font-size: 0.9rem;
@@ -299,6 +306,21 @@
                 background-color: #eff6ff;
                 color: #4338ca;
                 font-weight: 500;
+            }
+
+            .language-option .flag {
+                margin-right: 8px;
+                font-size: 1.1rem;
+            }
+
+            .language-option .check-icon {
+                width: 16px;
+                height: 16px;
+                display: none;
+            }
+
+            .language-option.active .check-icon {
+                display: block;
             }
 
         .hero {
@@ -1032,8 +1054,6 @@
 
         .status-text.online {
             color: var(--success);
-        }        .status-text.online {
-            color: var(--success);
         }
 
         .status-text.offline {
@@ -1190,6 +1210,8 @@
         <span data-lang="ja">コピーしました</span>
         <span data-lang="en" style="display: none;">Copied</span>
         <span data-lang="fr" style="display: none;">Copié</span>
+        <span data-lang="es" style="display: none;">Copiado</span>
+        <span data-lang="ko" style="display: none;">복사됨</span>
     </div>
 
     <header id="header">
@@ -1201,35 +1223,72 @@
             <div class="nav-container">
                 <nav id="nav">
                     <ul>
-                        <li><a href="#features" data-lang="ja">特徴</a><a href="#features" data-lang="en" style="display: none;">Features</a><a href="#features" data-lang="fr" style="display: none;">Caractéristiques</a></li>
-                        <li><a href="#worlds" data-lang="ja">ワールド</a><a href="#worlds" data-lang="en" style="display: none;">Worlds</a><a href="#worlds" data-lang="fr" style="display: none;">Mondes</a></li>
-                        <li><a href="#join" data-lang="ja">参加方法</a><a href="#join" data-lang="en" style="display: none;">How to Join</a><a href="#join" data-lang="fr" style="display: none;">Comment Rejoindre</a></li>
-                        <li><a href="#discord" data-lang="ja">Discord</a><a href="#discord" data-lang="en" style="display: none;">Discord</a><a href="#discord" data-lang="fr" style="display: none;">Discord</a></li>
+                        <li>
+                            <a href="#features" data-lang="ja">特徴</a>
+                            <a href="#features" data-lang="en" style="display: none;">Features</a>
+                            <a href="#features" data-lang="fr" style="display: none;">Caractéristiques</a>
+                            <a href="#features" data-lang="es" style="display: none;">Características</a>
+                            <a href="#features" data-lang="ko" style="display: none;">특징</a>
+                        </li>
+                        <li>
+                            <a href="#worlds" data-lang="ja">ワールド</a>
+                            <a href="#worlds" data-lang="en" style="display: none;">Worlds</a>
+                            <a href="#worlds" data-lang="fr" style="display: none;">Mondes</a>
+                            <a href="#worlds" data-lang="es" style="display: none;">Mundos</a>
+                            <a href="#worlds" data-lang="ko" style="display: none;">월드</a>
+                        </li>
+                        <li>
+                            <a href="#join" data-lang="ja">参加方法</a>
+                            <a href="#join" data-lang="en" style="display: none;">How to Join</a>
+                            <a href="#join" data-lang="fr" style="display: none;">Comment Rejoindre</a>
+                            <a href="#join" data-lang="es" style="display: none;">Cómo Unirse</a>
+                            <a href="#join" data-lang="ko" style="display: none;">참가 방법</a>
+                        </li>
+                        <li>
+                            <a href="#discord" data-lang="ja">Discord</a>
+                            <a href="#discord" data-lang="en" style="display: none;">Discord</a>
+                            <a href="#discord" data-lang="fr" style="display: none;">Discord</a>
+                            <a href="#discord" data-lang="es" style="display: none;">Discord</a>
+                            <a href="#discord" data-lang="ko" style="display: none;">Discord</a>
+                        </li>
                     </ul>
                 </nav>
                 <div class="language-dropdown" id="language-dropdown">
                     <button class="language-dropdown-btn" id="language-dropdown-btn">
+                        <span class="globe-icon">🌐</span>
                         <span class="dropdown-text" id="current-language">日本語</span>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <polyline points="6 9 12 15 18 9"></polyline>
                         </svg>
                     </button>
                     <div class="language-dropdown-content">
-                        <div class="language-option" data-lang="ja">
-                            日本語
-                            <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 8px;">
+                        <div class="language-option active" data-lang="ja">
+                            <span><span class="flag">🇯🇵</span>日本語</span>
+                            <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <polyline points="20 6 9 17 4 12"></polyline>
                             </svg>
                         </div>
                         <div class="language-option" data-lang="en">
-                            English
-                            <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 8px; display: none;">
+                            <span><span class="flag">🇺🇸</span>English</span>
+                            <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <polyline points="20 6 9 17 4 12"></polyline>
                             </svg>
                         </div>
                         <div class="language-option" data-lang="fr">
-                            Français
-                            <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 8px; display: none;">
+                            <span><span class="flag">🇫🇷</span>Français</span>
+                            <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                        </div>
+                        <div class="language-option" data-lang="es">
+                            <span><span class="flag">🇪🇸</span>Español</span>
+                            <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                        </div>
+                        <div class="language-option" data-lang="ko">
+                            <span><span class="flag">🇰🇷</span>한국어</span>
+                            <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <polyline points="20 6 9 17 4 12"></polyline>
                             </svg>
                         </div>
@@ -1246,22 +1305,32 @@
                 <h1 data-lang="ja">HavenMC</h1>
                 <h1 data-lang="en" style="display: none;">HavenMC</h1>
                 <h1 data-lang="fr" style="display: none;">HavenMC</h1>
+                <h1 data-lang="es" style="display: none;">HavenMC</h1>
+                <h1 data-lang="ko" style="display: none;">HavenMC</h1>
                 <p data-lang="ja">新しい冒険の世界へようこそ。</p>
                 <p data-lang="en" style="display: none;">Welcome to a new world of adventure.</p>
                 <p data-lang="fr" style="display: none;">Bienvenue dans un nouveau monde d'aventure.</p>
+                <p data-lang="es" style="display: none;">Bienvenido a un nuevo mundo de aventura.</p>
+                <p data-lang="ko" style="display: none;">새로운 모험의 세계에 오신 것을 환영합니다.</p>
                 <div class="hero-buttons">
                     <a href="#join" class="btn" data-lang="ja">今すぐ参加</a>
                     <a href="#join" class="btn" data-lang="en" style="display: none;">Join Now</a>
                     <a href="#join" class="btn" data-lang="fr" style="display: none;">Rejoindre Maintenant</a>
+                    <a href="#join" class="btn" data-lang="es" style="display: none;">Únete Ahora</a>
+                    <a href="#join" class="btn" data-lang="ko" style="display: none;">지금 참가</a>
                     <a href="https://discord.havenmc.f5.si" class="btn btn-outline" data-lang="ja">Discordに参加</a>
                     <a href="https://discord.havenmc.f5.si" class="btn btn-outline" data-lang="en" style="display: none;">Join Discord</a>
                     <a href="https://discord.havenmc.f5.si" class="btn btn-outline" data-lang="fr" style="display: none;">Rejoindre Discord</a>
+                    <a href="https://discord.havenmc.f5.si" class="btn btn-outline" data-lang="es" style="display: none;">Unirse a Discord</a>
+                    <a href="https://discord.havenmc.f5.si" class="btn btn-outline" data-lang="ko" style="display: none;">Discord 참가</a>
                 </div>
             </div>
             <div class="scroll-down">
                 <span data-lang="ja">スクロールして詳細を見る</span>
                 <span data-lang="en" style="display: none;">Scroll down for details</span>
                 <span data-lang="fr" style="display: none;">Défilez pour plus de détails</span>
+                <span data-lang="es" style="display: none;">Desplázate para más detalles</span>
+                <span data-lang="ko" style="display: none;">자세한 내용을 보려면 스크롤하세요</span>
                 <div class="scroll-down-arrow"></div>
             </div>
         </section>
@@ -1271,36 +1340,52 @@
                 <h2 class="section-title fade-in-section" data-lang="ja">サーバーの特徴</h2>
                 <h2 class="section-title fade-in-section" data-lang="en" style="display: none;">Server Features</h2>
                 <h2 class="section-title fade-in-section" data-lang="fr" style="display: none;">Caractéristiques du Serveur</h2>
+                <h2 class="section-title fade-in-section" data-lang="es" style="display: none;">Características del Servidor</h2>
+                <h2 class="section-title fade-in-section" data-lang="ko" style="display: none;">서버 특징</h2>
                 <p class="section-subtitle fade-in-section" data-lang="ja">HavenMCサーバーが提供する特別な体験をご紹介します</p>
                 <p class="section-subtitle fade-in-section" data-lang="en" style="display: none;">Discover the special experiences offered by the HavenMC server</p>
                 <p class="section-subtitle fade-in-section" data-lang="fr" style="display: none;">Découvrez les expériences spéciales offertes par le serveur HavenMC</p>
+                <p class="section-subtitle fade-in-section" data-lang="es" style="display: none;">Descubre las experiencias especiales que ofrece el servidor HavenMC</p>
+                <p class="section-subtitle fade-in-section" data-lang="ko" style="display: none;">HavenMC 서버가 제공하는 특별한 경험을 발견해보세요</p>
                 <div class="features">
                     <div class="feature-card fade-in-section">
                         <div class="feature-icon">🌐</div>
                         <h3 data-lang="ja">マルチバージョン対応</h3>
                         <h3 data-lang="en" style="display: none;">Multi-Version Support</h3>
                         <h3 data-lang="fr" style="display: none;">Support Multi-Versions</h3>
+                        <h3 data-lang="es" style="display: none;">Soporte Multi-Versión</h3>
+                        <h3 data-lang="ko" style="display: none;">멀티 버전 지원</h3>
                         <p data-lang="ja">幅広いバージョンでプレイ可能です。お好みのクライアントでお楽しみいただけます。</p>
                         <p data-lang="en" style="display: none;">Play with a wide range of versions. Enjoy with your preferred client.</p>
                         <p data-lang="fr" style="display: none;">Jouez avec une large gamme de versions. Profitez avec votre client préféré.</p>
+                        <p data-lang="es" style="display: none;">Juega con una amplia gama de versiones. Disfruta con tu cliente preferido.</p>
+                        <p data-lang="ko" style="display: none;">다양한 버전으로 플레이할 수 있습니다. 선호하는 클라이언트로 즐기세요.</p>
                     </div>
                     <div class="feature-card fade-in-section">
                         <div class="feature-icon">🏕️</div>
                         <h3 data-lang="ja">純粋なサバイバル体験</h3>
                         <h3 data-lang="en" style="display: none;">Pure Survival Experience</h3>
                         <h3 data-lang="fr" style="display: none;">Expérience de Survie Pure</h3>
+                        <h3 data-lang="es" style="display: none;">Experiencia de Supervivencia Pura</h3>
+                        <h3 data-lang="ko" style="display: none;">순수한 서바이벌 경험</h3>
                         <p data-lang="ja">余計な機能を排除した、マインクラフト本来の楽しさを味わえるサバイバルサーバーです。自由に建築し、探索し、冒険しましょう。</p>
                         <p data-lang="en" style="display: none;">A survival server that offers the original fun of Minecraft without unnecessary features. Build, explore, and adventure freely.</p>
                         <p data-lang="fr" style="display: none;">Un serveur de survie qui offre le plaisir original de Minecraft sans fonctionnalités inutiles. Construisez, explorez et aventurez-vous librement.</p>
+                        <p data-lang="es" style="display: none;">Un servidor de supervivencia que ofrece la diversión original de Minecraft sin características innecesarias. Construye, explora y aventúrate libremente.</p>
+                        <p data-lang="ko" style="display: none;">불필요한 기능을 제거하고 마인크래프트 본래의 재미를 제공하는 서바이벌 서버입니다. 자유롭게 건축하고, 탐험하고, 모험하세요.</p>
                     </div>
                     <div class="feature-card fade-in-section">
                         <div class="feature-icon">🚀</div>
                         <h3 data-lang="ja">成長するコミュニティ</h3>
                         <h3 data-lang="en" style="display: none;">Growing Community</h3>
                         <h3 data-lang="fr" style="display: none;">Communauté Grandissante</h3>
+                        <h3 data-lang="es" style="display: none;">Comunidad en Crecimiento</h3>
+                        <h3 data-lang="ko" style="display: none;">성장하는 커뮤니티</h3>
                         <p data-lang="ja">新しく立ち上がったサーバーで、一緒にコミュニティを作り上げていきましょう。あなたのアイデアや提案が形になる場所です。</p>
                         <p data-lang="en" style="display: none;">Join our newly established server and help build the community together. This is a place where your ideas and suggestions can take shape.</p>
                         <p data-lang="fr" style="display: none;">Rejoignez notre serveur nouvellement établi et aidez à construire la communauté ensemble. C'est un endroit où vos idées et suggestions peuvent prendre forme.</p>
+                        <p data-lang="es" style="display: none;">Únete a nuestro servidor recién establecido y ayuda a construir la comunidad juntos. Este es un lugar donde tus ideas y sugerencias pueden tomar forma.</p>
+                        <p data-lang="ko" style="display: none;">새로 설립된 서버에 참여하여 함께 커뮤니티를 구축해보세요. 여러분의 아이디어와 제안이 현실이 되는 곳입니다.</p>
                     </div>
                 </div>
             </div>
@@ -1311,9 +1396,13 @@
                 <h2 class="section-title fade-in-section" data-lang="ja">サーバー構成</h2>
                 <h2 class="section-title fade-in-section" data-lang="en" style="display: none;">Server Structure</h2>
                 <h2 class="section-title fade-in-section" data-lang="fr" style="display: none;">Structure du Serveur</h2>
+                <h2 class="section-title fade-in-section" data-lang="es" style="display: none;">Estructura del Servidor</h2>
+                <h2 class="section-title fade-in-section" data-lang="ko" style="display: none;">서버 구조</h2>
                 <p class="section-subtitle fade-in-section" data-lang="ja">様々なワールドで異なる体験をお楽しみいただけます</p>
                 <p class="section-subtitle fade-in-section" data-lang="en" style="display: none;">Enjoy different experiences in various worlds</p>
                 <p class="section-subtitle fade-in-section" data-lang="fr" style="display: none;">Profitez d'expériences différentes dans divers mondes</p>
+                <p class="section-subtitle fade-in-section" data-lang="es" style="display: none;">Disfruta de diferentes experiencias en varios mundos</p>
+                <p class="section-subtitle fade-in-section" data-lang="ko" style="display: none;">다양한 월드에서 서로 다른 경험을 즐기세요</p>
                 <div class="worlds">
                     <div class="world-card fade-in-section">
                         <div class="world-img" style="background-image: url('https://cdn.ryusei.f5.si/hub.webp');"></div>
@@ -1321,9 +1410,13 @@
                             <h3 data-lang="ja">ロビー</h3>
                             <h3 data-lang="en" style="display: none;">Lobby</h3>
                             <h3 data-lang="fr" style="display: none;">Hall</h3>
+                            <h3 data-lang="es" style="display: none;">Vestíbulo</h3>
+                            <h3 data-lang="ko" style="display: none;">로비</h3>
                             <p data-lang="ja">サーバーの中心となるハブエリアです。各ワールドへのポータルがあり、プレイヤー同士の交流の場としても機能します。</p>
                             <p data-lang="en" style="display: none;">The central hub area of the server. It has portals to each world and also functions as a place for players to interact.</p>
                             <p data-lang="fr" style="display: none;">La zone centrale du serveur. Il dispose de portails vers chaque monde et fonctionne également comme un lieu d'interaction entre les joueurs.</p>
+                            <p data-lang="es" style="display: none;">El área central del servidor. Tiene portales a cada mundo y también funciona como un lugar para que los jugadores interactúen.</p>
+                            <p data-lang="ko" style="display: none;">서버의 중앙 허브 영역입니다. 각 월드로의 포털이 있으며 플레이어들이 교류하는 장소로도 기능합니다.</p>
                         </div>
                     </div>
                     <div class="world-card fade-in-section">
@@ -1332,9 +1425,13 @@
                             <h3 data-lang="ja">サバイバル</h3>
                             <h3 data-lang="en" style="display: none;">Survival</h3>
                             <h3 data-lang="fr" style="display: none;">Survie</h3>
+                            <h3 data-lang="es" style="display: none;">Supervivencia</h3>
+                            <h3 data-lang="ko" style="display: none;">서바이벌</h3>
                             <p data-lang="ja">メインのサバイバルワールドです。建築、探索、採掘など、Minecraftの醍醐味を存分に楽しめます。</p>
                             <p data-lang="en" style="display: none;">The main survival world. Enjoy the essence of Minecraft with building, exploration, mining, and more.</p>
                             <p data-lang="fr" style="display: none;">Le monde principal de survie. Profitez de l'essence de Minecraft avec la construction, l'exploration, l'exploitation minière et plus encore.</p>
+                            <p data-lang="es" style="display: none;">El mundo principal de supervivencia. Disfruta de la esencia de Minecraft con construcción, exploración, minería y más.</p>
+                            <p data-lang="ko" style="display: none;">메인 서바이벌 월드입니다. 건축, 탐험, 채굴 등 마인크래프트의 진수를 마음껏 즐기세요.</p>
                         </div>
                     </div>
                     <div class="world-card fade-in-section">
@@ -1343,9 +1440,13 @@
                             <h3 data-lang="ja">資源ワールド</h3>
                             <h3 data-lang="en" style="display: none;">Resource World</h3>
                             <h3 data-lang="fr" style="display: none;">Monde des Ressources</h3>
+                            <h3 data-lang="es" style="display: none;">Mundo de Recursos</h3>
+                            <h3 data-lang="ko" style="display: none;">자원 월드</h3>
                             <p data-lang="ja">オーバーワールド、ネザー、エンドの資源採取専用ワールドがあります。メインワールドを荒らすことなく、思う存分資源を集められます。</p>
                             <p data-lang="en" style="display: none;">There are dedicated resource worlds for the Overworld, Nether, and End. Gather resources to your heart's content without disrupting the main world.</p>
                             <p data-lang="fr" style="display: none;">Il existe des mondes de ressources dédiés pour l'Overworld, le Nether et l'End. Rassemblez des ressources à volonté sans perturber le monde principal.</p>
+                            <p data-lang="es" style="display: none;">Hay mundos de recursos dedicados para el Overworld, Nether y End. Reúne recursos a tu gusto sin interrumpir el mundo principal.</p>
+                            <p data-lang="ko" style="display: none;">오버월드, 네더, 엔드의 전용 자원 채취 월드가 있습니다. 메인 월드를 훼손하지 않고 마음껏 자원을 수집할 수 있습니다.</p>
                         </div>
                     </div>
                 </div>
@@ -1357,9 +1458,13 @@
                 <h2 class="section-title fade-in-section" data-lang="ja">参加方法</h2>
                 <h2 class="section-title fade-in-section" data-lang="en" style="display: none;">How to Join</h2>
                 <h2 class="section-title fade-in-section" data-lang="fr" style="display: none;">Comment Rejoindre</h2>
+                <h2 class="section-title fade-in-section" data-lang="es" style="display: none;">Cómo Unirse</h2>
+                <h2 class="section-title fade-in-section" data-lang="ko" style="display: none;">참가 방법</h2>
                 <p class="section-subtitle fade-in-section" data-lang="ja">簡単な手順でサーバーに参加できます</p>
                 <p class="section-subtitle fade-in-section" data-lang="en" style="display: none;">Join the server with simple steps</p>
                 <p class="section-subtitle fade-in-section" data-lang="fr" style="display: none;">Rejoignez le serveur en quelques étapes simples</p>
+                <p class="section-subtitle fade-in-section" data-lang="es" style="display: none;">Únete al servidor con pasos simples</p>
+                <p class="section-subtitle fade-in-section" data-lang="ko" style="display: none;">간단한 단계로 서버에 참가할 수 있습니다</p>
                 <div class="join fade-in-section">
                     <div class="server-status-card" id="server-status-card">
                         <div class="status-left">
@@ -1368,12 +1473,16 @@
                             <span id="status-text" class="status-text" data-lang="ja">ステータス取得中...</span>
                             <span id="status-text-en" class="status-text" data-lang="en" style="display: none;">Fetching status...</span>
                             <span id="status-text-fr" class="status-text" data-lang="fr" style="display: none;">Récupération de l'état...</span>
+                            <span id="status-text-es" class="status-text" data-lang="es" style="display: none;">Obteniendo estado...</span>
+                            <span id="status-text-ko" class="status-text" data-lang="ko" style="display: none;">상태 가져오는 중...</span>
                         </div>
                         <div class="status-right">
                             <div class="player-count">
                                 <span data-lang="ja">プレイヤー:</span>
                                 <span data-lang="en" style="display: none;">Players:</span>
                                 <span data-lang="fr" style="display: none;">Joueurs:</span>
+                                <span data-lang="es" style="display: none;">Jugadores:</span>
+                                <span data-lang="ko" style="display: none;">플레이어:</span>
                                 <span id="player-count-value" class="player-count-value">-</span>
                                 <span>/</span>
                                 <span id="max-players-value">-</span>
@@ -1387,9 +1496,13 @@
                         <h3 data-lang="ja">Java版での参加方法</h3>
                         <h3 data-lang="en" style="display: none;">How to Join with Java Edition</h3>
                         <h3 data-lang="fr" style="display: none;">Comment rejoindre avec l'édition Java</h3>
+                        <h3 data-lang="es" style="display: none;">Cómo unirse con Java Edition</h3>
+                        <h3 data-lang="ko" style="display: none;">Java 에디션으로 참가하는 방법</h3>
                         <p data-lang="ja">以下のサーバーアドレスをMinecraftのマルチプレイ画面で入力してください：</p>
                         <p data-lang="en" style="display: none;">Enter the following server address in Minecraft's multiplayer screen:</p>
                         <p data-lang="fr" style="display: none;">Entrez l'adresse de serveur suivante dans l'écran multijoueur de Minecraft :</p>
+                        <p data-lang="es" style="display: none;">Ingresa la siguiente dirección de servidor en la pantalla multijugador de Minecraft:</p>
+                        <p data-lang="ko" style="display: none;">마인크래프트 멀티플레이어 화면에서 다음 서버 주소를 입력하세요:</p>
                         <div class="server-address-container">
                             <div class="server-address" id="server-ip">play.havenmc.f5.si</div>
                             <button class="copy-btn" onclick="copyServerIP()" title="IPアドレスをコピー">
@@ -1405,9 +1518,13 @@
                         <h3 data-lang="ja">統合版での参加方法</h3>
                         <h3 data-lang="en" style="display: none;">How to Join with Bedrock Edition</h3>
                         <h3 data-lang="fr" style="display: none;">Comment rejoindre avec l'édition Bedrock</h3>
+                        <h3 data-lang="es" style="display: none;">Cómo unirse con Bedrock Edition</h3>
+                        <h3 data-lang="ko" style="display: none;">베드락 에디션으로 참가하는 방법</h3>
                         <p data-lang="ja">以下のIDにフレンド申請を送ってください：</p>
                         <p data-lang="en" style="display: none;">Send a friend request to the following ID:</p>
                         <p data-lang="fr" style="display: none;">Envoyez une demande d'ami à l'identifiant suivant :</p>
+                        <p data-lang="es" style="display: none;">Envía una solicitud de amistad al siguiente ID:</p>
+                        <p data-lang="ko" style="display: none;">다음 ID에 친구 요청을 보내주세요:</p>
                         <div class="server-address-container">
                             <div class="server-address" id="bedrock-id">Haven MC Server</div>
                             <button class="copy-btn" onclick="copyBedrockID()" title="IDをコピー">
@@ -1428,12 +1545,18 @@
                                 <h3 data-lang="ja">Discordコミュニティに参加する</h3>
                                 <h3 data-lang="en" style="display: none;">Join our Discord Community</h3>
                                 <h3 data-lang="fr" style="display: none;">Rejoignez notre communauté Discord</h3>
+                                <h3 data-lang="es" style="display: none;">Únete a nuestra comunidad Discord</h3>
+                                <h3 data-lang="ko" style="display: none;">Discord 커뮤니티에 참가하세요</h3>
                                 <p data-lang="ja">サーバーに関する最新情報や、他のプレイヤーとの交流を楽しめます。</p>
                                 <p data-lang="en" style="display: none;">Get the latest information about the server and enjoy interacting with other players.</p>
                                 <p data-lang="fr" style="display: none;">Obtenez les dernières informations sur le serveur et profitez de l'interaction avec d'autres joueurs.</p>
+                                <p data-lang="es" style="display: none;">Obtén la información más reciente sobre el servidor y disfruta interactuando con otros jugadores.</p>
+                                <p data-lang="ko" style="display: none;">서버에 대한 최신 정보를 얻고 다른 플레이어들과의 교류를 즐기세요.</p>
                                 <a href="https://discord.havenmc.f5.si" class="discord-btn" data-lang="ja">Discordに参加</a>
                                 <a href="https://discord.havenmc.f5.si" class="discord-btn" data-lang="en" style="display: none;">Join Discord</a>
                                 <a href="https://discord.havenmc.f5.si" class="discord-btn" data-lang="fr" style="display: none;">Rejoindre Discord</a>
+                                <a href="https://discord.havenmc.f5.si" class="discord-btn" data-lang="es" style="display: none;">Unirse a Discord</a>
+                                <a href="https://discord.havenmc.f5.si" class="discord-btn" data-lang="ko" style="display: none;">Discord 참가</a>
                             </div>
                         </div>
                     </div>
@@ -1450,11 +1573,15 @@
             </div>
             <div class="footer-links">
                 <a href="/terms-of-service" data-lang="ja">利用規約</a>
-                <a href="/terms-of                <a href="/terms-of-service" data-lang="en" style="display: none;">Terms of Service</a>
+                <a href="/terms-of-service" data-lang="en" style="display: none;">Terms of Service</a>
                 <a href="/terms-of-service" data-lang="fr" style="display: none;">Conditions d'utilisation</a>
+                <a href="/terms-of-service" data-lang="es" style="display: none;">Términos de Servicio</a>
+                <a href="/terms-of-service" data-lang="ko" style="display: none;">이용약관</a>
                 <a href="/privacy-policy" data-lang="ja">プライバシーポリシー</a>
                 <a href="/privacy-policy" data-lang="en" style="display: none;">Privacy Policy</a>
                 <a href="/privacy-policy" data-lang="fr" style="display: none;">Politique de confidentialité</a>
+                <a href="/privacy-policy" data-lang="es" style="display: none;">Política de Privacidad</a>
+                <a href="/privacy-policy" data-lang="ko" style="display: none;">개인정보처리방침</a>
             </div>
             <div class="copyright">
                 &copy; 2024 HavenMC. All rights reserved.
@@ -1463,6 +1590,8 @@
                 <a href="https://discord.havenmc.f5.si" data-lang="ja">お問い合わせ</a>
                 <a href="https://discord.havenmc.f5.si" data-lang="en" style="display: none;">Contact Us</a>
                 <a href="https://discord.havenmc.f5.si" data-lang="fr" style="display: none;">Contactez-nous</a>
+                <a href="https://discord.havenmc.f5.si" data-lang="es" style="display: none;">Contáctanos</a>
+                <a href="https://discord.havenmc.f5.si" data-lang="ko" style="display: none;">문의하기</a>
             </div>
         </div>
     </footer>
@@ -1571,6 +1700,12 @@
                     case 'fr':
                         currentLangText.textContent = 'Français';
                         break;
+                    case 'es':
+                        currentLangText.textContent = 'Español';
+                        break;
+                    case 'ko':
+                        currentLangText.textContent = '한국어';
+                        break;
                 }
             }
 
@@ -1635,7 +1770,9 @@
             
             return date.toLocaleString(
                 currentLang === 'ja' ? 'ja-JP' : 
-                currentLang === 'fr' ? 'fr-FR' : 'en-US', 
+                currentLang === 'fr' ? 'fr-FR' : 
+                currentLang === 'es' ? 'es-ES' :
+                currentLang === 'ko' ? 'ko-KR' : 'en-US', 
                 options
             );
         }
@@ -1645,6 +1782,8 @@
             const statusText = document.getElementById('status-text');
             const statusTextEn = document.getElementById('status-text-en');
             const statusTextFr = document.getElementById('status-text-fr');
+            const statusTextEs = document.getElementById('status-text-es');
+            const statusTextKo = document.getElementById('status-text-ko');
             const playerCount = document.getElementById('player-count-value');
             const maxPlayers = document.getElementById('max-players-value');
             const lastUpdated = document.getElementById('last-updated');
@@ -1663,6 +1802,10 @@
                     lastUpdatedText = `最終更新: ${formattedDate}`;
                 } else if (currentLang === 'fr') {
                     lastUpdatedText = `Dernière mise à jour: ${formattedDate}`;
+                } else if (currentLang === 'es') {
+                    lastUpdatedText = `Última actualización: ${formattedDate}`;
+                } else if (currentLang === 'ko') {
+                    lastUpdatedText = `마지막 업데이트: ${formattedDate}`;
                 } else {
                     lastUpdatedText = `Last updated: ${formattedDate}`;
                 }
@@ -1676,14 +1819,13 @@
                     statusText.textContent = 'オンライン';
                     statusTextEn.textContent = 'Online';
                     statusTextFr.textContent = 'En ligne';
+                    statusTextEs.textContent = 'En línea';
+                    statusTextKo.textContent = '온라인';
                     
-                    statusText.classList.add('online');
-                    statusTextEn.classList.add('online');
-                    statusTextFr.classList.add('online');
-                    
-                    statusText.classList.remove('offline');
-                    statusTextEn.classList.remove('offline');
-                    statusTextFr.classList.remove('offline');
+                    [statusText, statusTextEn, statusTextFr, statusTextEs, statusTextKo].forEach(element => {
+                        element.classList.add('online');
+                        element.classList.remove('offline');
+                    });
                     
                     playerCount.textContent = data.players.online;
                     maxPlayers.textContent = data.players.max;
@@ -1694,14 +1836,13 @@
                     statusText.textContent = 'オフライン';
                     statusTextEn.textContent = 'Offline';
                     statusTextFr.textContent = 'Hors ligne';
+                    statusTextEs.textContent = 'Desconectado';
+                    statusTextKo.textContent = '오프라인';
                     
-                    statusText.classList.add('offline');
-                    statusTextEn.classList.add('offline');
-                    statusTextFr.classList.add('offline');
-                    
-                    statusText.classList.remove('online');
-                    statusTextEn.classList.remove('online');
-                    statusTextFr.classList.remove('online');
+                    [statusText, statusTextEn, statusTextFr, statusTextEs, statusTextKo].forEach(element => {
+                        element.classList.add('offline');
+                        element.classList.remove('online');
+                    });
                     
                     playerCount.textContent = '0';
                     maxPlayers.textContent = '0';
@@ -1715,10 +1856,12 @@
                 statusText.textContent = 'エラー';
                 statusTextEn.textContent = 'Error';
                 statusTextFr.textContent = 'Erreur';
+                statusTextEs.textContent = 'Error';
+                statusTextKo.textContent = '오류';
                 
-                statusText.classList.add('offline');
-                statusTextEn.classList.add('offline');
-                statusTextFr.classList.add('offline');
+                [statusText, statusTextEn, statusTextFr, statusTextEs, statusTextKo].forEach(element => {
+                    element.classList.add('offline');
+                });
                 
                 playerCount.textContent = '-';
                 maxPlayers.textContent = '-';
