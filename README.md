@@ -1,1 +1,1 @@
-[HavenMC](https://havenmc.jp)公式サイトです
+# [HavenMC](https://havenmc.jp)
