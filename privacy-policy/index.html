@@ -226,7 +226,6 @@
             color: var(--dark);
         }
 
-        /* 言語ドロップダウン - スクリーンショットに合わせたスタイル */
         .language-dropdown {
             position: relative;
             display: inline-block;
@@ -700,44 +699,113 @@
                 <div class="content-container">
                     <div data-lang="ja">
                         <h2>プライバシーポリシー</h2>
-                        <p>このプライバシーポリシーは、当サイト（以下「本サイト」といいます）における個人情報の取り扱いについて説明するものです。</p>
+                        <p>このプライバシーポリシーは、HavenMCサーバー及び関連サービス（以下「本サービス」といいます）における個人情報の取り扱いについて説明するものです。</p>
 
                         <h2>1. 収集する個人情報</h2>
-                        <p>本サイトでは、以下の個人情報を収集する場合があります。</p>
+                        <p>本サービスでは、以下の個人情報を収集する場合があります。</p>
                         <ul>
-                            <li>お問い合わせフォームに入力された氏名、メールアドレス</li>
-                            <li>アクセスログ（IPアドレス、ブラウザの種類、アクセス日時など）</li>
+                            <li><strong>Minecraftアカウント情報</strong>
+                                <ul>
+                                    <li>Minecraft UUID（ユニーク識別子）</li>
+                                    <li>Minecraft ID（プレイヤー名）</li>
+                                    <li>スキン情報</li>
+                                </ul>
+                            </li>
+                            <li><strong>Discord関連情報</strong>
+                                <ul>
+                                    <li>Discord ID（ユーザー識別子）</li>
+                                    <li>Discord ユーザー名</li>
+                                    <li>Discord サーバー内での活動履歴</li>
+                                </ul>
+                            </li>
+                            <li><strong>サーバー接続情報</strong>
+                                <ul>
+                                    <li>IPアドレス</li>
+                                    <li>接続時間・プレイ時間</li>
+                                    <li>サーバー内での位置情報</li>
+                                    <li>チャットログ</li>
+                                </ul>
+                            </li>
+                            <li><strong>ゲーム内活動データ</strong>
+                                <ul>
+                                    <li>建築物・作成物</li>
+                                    <li>アイテム所持状況</li>
+                                    <li>経済活動履歴</li>
+                                    <li>他プレイヤーとの取引履歴</li>
+                                </ul>
+                            </li>
+                            <li><strong>ウェブサイト関連情報</strong>
+                                <ul>
+                                    <li>お問い合わせフォームに入力された氏名、メールアドレス</li>
+                                    <li>アクセスログ（IPアドレス、ブラウザの種類、アクセス日時など）</li>
+                                </ul>
+                            </li>
                         </ul>
 
                         <h2>2. 個人情報の利用目的</h2>
                         <p>収集した個人情報は、以下の目的で利用します。</p>
                         <ul>
+                            <li>サーバーの運営・管理</li>
+                            <li>プレイヤーの認証・識別</li>
+                            <li>ゲーム内経済システムの管理</li>
+                            <li>不正行為・迷惑行為の防止・対処</li>
+                            <li>サーバールールの執行</li>
+                            <li>プレイヤー間のトラブル解決</li>
+                            <li>サーバーの改善・新機能の開発</li>
                             <li>お問い合わせへの対応</li>
-                            <li>本サイトの改善</li>
                             <li>統計データの作成（個人を特定できない形式）</li>
+                            <li>コミュニティ活動の運営</li>
                         </ul>
 
-                        <h2>3. 個人情報の第三者提供</h2>
-                        <p>本サイトでは、以下の場合を除き、個人情報を第三者に提供することはありません。</p>
+                        <h2>3. 個人情報の保存期間</h2>
+                        <p>収集した個人情報は、以下の期間保存されます。</p>
+                        <ul>
+                            <li><strong>アクティブプレイヤーのデータ</strong>：サーバー利用中及び最終ログインから2年間</li>
+                            <li><strong>BANされたプレイヤーのデータ</strong>：永続的に保存（不正行為の再発防止のため）</li>
+                            <li><strong>チャットログ</strong>：6ヶ月間</li>
+                            <li><strong>取引履歴</strong>：1年間</li>
+                            <li><strong>ウェブサイトアクセスログ</strong>：3ヶ月間</li>
+                        </ul>
+
+                        <h2>4. 個人情報の削除について</h2>
+                        <p>以下の場合を除き、プレイヤーからの削除要求には原則として応じることができません。</p>
+                        <ul>
+                            <li>法的要求がある場合</li>
+                            <li>サーバー運営に重大な支障をきたさない場合</li>
+                            <li>他のプレイヤーの権利を侵害しない場合</li>
+                        </ul>
+                        <p><strong>削除できない理由：</strong>ゲーム内経済システム、建築物の所有権、取引履歴の整合性を保つため、また不正行為の再発防止のため、多くのデータは削除することができません。</p>
+
+                        <h2>5. 個人情報の第三者提供</h2>
+                        <p>本サービスでは、以下の場合を除き、個人情報を第三者に提供することはありません。</p>
                         <ul>
                             <li>ご本人の同意がある場合</li>
                             <li>法令に基づく場合</li>
+                            <li>サーバー運営に必要な範囲で信頼できる第三者サービス（ホスティングプロバイダーなど）に提供する場合</li>
                         </ul>
 
-                        <h2>4. 個人情報の管理</h2>
-                        <p>収集した個人情報は、適切に管理し、紛失、改ざん、漏洩などを防止するために必要な措置を講じます。</p>
+                        <h2>6. 個人情報の管理</h2>
+                        <p>収集した個人情報は、適切に管理し、紛失、改ざん、漏洩などを防止するために必要な措置を講じます。サーバーデータは定期的にバックアップを取り、セキュリティ対策を実施しています。</p>
 
-                        <h2>5. Cookie（クッキー）について</h2>
-                        <p>本サイトでは、Cookieを使用する場合があります。Cookieは、ウェブサイトが利用者のブラウザに送信する小さなテキストファイルで、利用者のコンピュータに保存されます。Cookieを使用することで、利用者の閲覧履歴や入力情報を記録し、より快適なウェブサイトの利用を提供することができます。利用者は、ブラウザの設定を変更することで、Cookieの受け入れを拒否することができます。</p>
+                        <h2>7. Cookie（クッキー）について</h2>
+                        <p>本ウェブサイトでは、Cookieを使用する場合があります。Cookieは、ウェブサイトが利用者のブラウザに送信する小さなテキストファイルで、利用者のコンピュータに保存されます。Cookieを使用することで、利用者の閲覧履歴や入力情報を記録し、より快適なウェブサイトの利用を提供することができます。利用者は、ブラウザの設定を変更することで、Cookieの受け入れを拒否することができます。</p>
 
-                        <h2>6. アクセスログについて</h2>
-                        <p>本サイトでは、アクセスログを収集しています。アクセスログには、IPアドレス、ブラウザの種類、アクセス日時などが含まれます。アクセスログは、本サイトの利用状況を分析し、改善するために利用します。</p>
+                        <h2>8. 外部サービスとの連携</h2>
+                        <p>本サービスは以下の外部サービスと連携しており、それぞれのプライバシーポリシーが適用される場合があります。</p>
+                        <ul>
+                            <li>Discord（コミュニティ管理）</li>
+                            <li>Minecraft（ゲームサービス）</li>
+                            <li>各種プラグイン・MODサービス</li>
+                        </ul>
 
-                        <h2>7. プライバシーポリシーの変更</h2>
-                        <p>本プライバシーポリシーは、必要に応じて変更されることがあります。変更後のプライバシーポリシーは、本サイトに掲載された時点から効力を生じるものとします。</p>
+                        <h2>9. 未成年者の個人情報について</h2>
+                        <p>13歳未満の方がサーバーを利用する場合は、保護者の同意が必要です。未成年者の個人情報については、特に慎重に取り扱います。</p>
 
-                        <h2>8. お問い合わせ</h2>
-                        <p>個人情報の取り扱いに関するお問い合わせは、Discordサーバーの専用チャンネルまでお寄せください。</p>
+                        <h2>10. プライバシーポリシーの変更</h2>
+                        <p>本プライバシーポリシーは、必要に応じて変更されることがあります。重要な変更がある場合は、サーバー内及びDiscordサーバーにて事前に通知いたします。変更後のプライバシーポリシーは、本サイトに掲載された時点から効力を生じるものとします。</p>
+
+                        <h2>11. お問い合わせ</h2>
+                        <p>個人情報の取り扱いに関するお問い合わせ、データの確認・修正・削除要求は、Discordサーバーの専用チャンネルまでお寄せください。</p>
                         <p><a href="https://mcdis.ryusei.f5.si" target="_blank">Discordサーバーに参加する</a></p>
 
                         <a href="/index.html" class="back-to-home">ホームに戻る</a>
@@ -745,44 +813,113 @@
 
                     <div data-lang="en" style="display: none;">
                         <h2>Privacy Policy</h2>
-                        <p>This Privacy Policy explains how personal information is handled on this site (hereinafter referred to as "this site").</p>
+                        <p>This Privacy Policy explains how personal information is handled on the HavenMC server and related services (hereinafter referred to as "this service").</p>
 
                         <h2>1. Personal Information Collected</h2>
-                        <p>This site may collect the following personal information:</p>
+                        <p>This service may collect the following personal information:</p>
                         <ul>
-                            <li>Name and email address entered in the contact form</li>
-                            <li>Access logs (IP address, browser type, access time, etc.)</li>
+                            <li><strong>Minecraft Account Information</strong>
+                                <ul>
+                                    <li>Minecraft UUID (Unique Identifier)</li>
+                                    <li>Minecraft ID (Player Name)</li>
+                                    <li>Skin Information</li>
+                                </ul>
+                            </li>
+                            <li><strong>Discord Related Information</strong>
+                                <ul>
+                                    <li>Discord ID (User Identifier)</li>
+                                    <li>Discord Username</li>
+                                    <li>Activity History within Discord Server</li>
+                                </ul>
+                            </li>
+                            <li><strong>Server Connection Information</strong>
+                                <ul>
+                                    <li>IP Address</li>
+                                    <li>Connection Time & Play Time</li>
+                                    <li>In-server Location Data</li>
+                                    <li>Chat Logs</li>
+                                </ul>
+                            </li>
+                            <li><strong>In-Game Activity Data</strong>
+                                <ul>
+                                    <li>Buildings & Creations</li>
+                                    <li>Item Inventory Status</li>
+                                    <li>Economic Activity History</li>
+                                    <li>Trading History with Other Players</li>
+                                </ul>
+                            </li>
+                            <li><strong>Website Related Information</strong>
+                                <ul>
+                                    <li>Name and email address entered in contact forms</li>
+                                    <li>Access logs (IP address, browser type, access time, etc.)</li>
+                                </ul>
+                            </li>
                         </ul>
 
                         <h2>2. Purpose of Using Personal Information</h2>
                         <p>The collected personal information is used for the following purposes:</p>
                         <ul>
+                            <li>Server operation and management</li>
+                            <li>Player authentication and identification</li>
+                            <li>In-game economy system management</li>
+                            <li>Prevention and handling of cheating and harassment</li>
+                            <li>Server rule enforcement</li>
+                            <li>Resolving disputes between players</li>
+                            <li>Server improvement and new feature development</li>
                             <li>Responding to inquiries</li>
-                            <li>Improving this site</li>
                             <li>Creating statistical data (in a format that cannot identify individuals)</li>
+                            <li>Community activity management</li>
                         </ul>
 
-                        <h2>3. Provision of Personal Information to Third Parties</h2>
-                        <p>This site will not provide personal information to third parties except in the following cases:</p>
+                        <h2>3. Personal Information Retention Period</h2>
+                        <p>Collected personal information is stored for the following periods:</p>
+                        <ul>
+                            <li><strong>Active Player Data</strong>: During server use and 2 years from last login</li>
+                            <li><strong>Banned Player Data</strong>: Permanently stored (to prevent recurrence of misconduct)</li>
+                            <li><strong>Chat Logs</strong>: 6 months</li>
+                            <li><strong>Trading History</strong>: 1 year</li>
+                            <li><strong>Website Access Logs</strong>: 3 months</li>
+                        </ul>
+
+                        <h2>4. About Personal Information Deletion</h2>
+                        <p>Except in the following cases, we generally cannot comply with deletion requests from players:</p>
+                        <ul>
+                            <li>When there is a legal requirement</li>
+                            <li>When it does not significantly interfere with server operations</li>
+                            <li>When it does not infringe on other players' rights</li>
+                        </ul>
+                        <p><strong>Reasons for non-deletion:</strong> To maintain the integrity of the in-game economy system, building ownership, trading history, and to prevent recurrence of misconduct, much data cannot be deleted.</p>
+
+                        <h2>5. Provision of Personal Information to Third Parties</h2>
+                        <p>This service will not provide personal information to third parties except in the following cases:</p>
                         <ul>
                             <li>When consent is obtained from the individual</li>
                             <li>When required by law</li>
+                            <li>When providing to trusted third-party services (such as hosting providers) within the scope necessary for server operation</li>
                         </ul>
 
-                        <h2>4. Management of Personal Information</h2>
-                        <p>The collected personal information is properly managed, and necessary measures are taken to prevent loss, falsification, leakage, etc.</p>
+                        <h2>6. Management of Personal Information</h2>
+                        <p>The collected personal information is properly managed, and necessary measures are taken to prevent loss, falsification, leakage, etc. Server data is regularly backed up and security measures are implemented.</p>
 
-                        <h2>5. About Cookies</h2>
-                        <p>This site may use cookies. Cookies are small text files sent by websites to users' browsers and stored on users' computers. By using cookies, we can record users' browsing history and input information, providing a more comfortable website experience. Users can refuse to accept cookies by changing their browser settings.</p>
+                        <h2>7. About Cookies</h2>
+                        <p>This website may use cookies. Cookies are small text files sent by websites to users' browsers and stored on users' computers. By using cookies, we can record users' browsing history and input information, providing a more comfortable website experience. Users can refuse to accept cookies by changing their browser settings.</p>
 
-                        <h2>6. About Access Logs</h2>
-                        <p>This site collects access logs. Access logs include IP address, browser type, access time, etc. Access logs are used to analyze and improve the usage of this site.</p>
+                        <h2>8. Integration with External Services</h2>
+                        <p>This service integrates with the following external services, and their respective privacy policies may apply:</p>
+                        <ul>
+                            <li>Discord (Community Management)</li>
+                            <li>Minecraft (Game Service)</li>
+                            <li>Various Plugin & MOD Services</li>
+                        </ul>
 
-                        <h2>7. Changes to the Privacy Policy</h2>
-                        <p>This Privacy Policy may be changed as necessary. The revised Privacy Policy will take effect from the time it is posted on this site.</p>
+                        <h2>9. About Personal Information of Minors</h2>
+                        <p>If individuals under 13 years of age use the server, parental consent is required. Personal information of minors is handled with particular care.</p>
 
-                        <h2>8. Contact</h2>
-                        <p>For inquiries regarding the handling of personal information, please contact us through the dedicated channel on our Discord server.</p>
+                        <h2>10. Changes to the Privacy Policy</h2>
+                        <p>This Privacy Policy may be changed as necessary. In case of important changes, we will notify in advance within the server and on the Discord server. The revised Privacy Policy will take effect from the time it is posted on this site.</p>
+
+                        <h2>11. Contact</h2>
+                        <p>For inquiries regarding the handling of personal information, data verification, correction, or deletion requests, please contact us through the dedicated channel on our Discord server.</p>
                         <p><a href="https://mcdis.ryusei.f5.si" target="_blank">Join our Discord server</a></p>
 
                         <a href="/index.html" class="back-to-home">Return to Home</a>
@@ -790,44 +927,113 @@
 
                     <div data-lang="fr" style="display: none;">
                         <h2>Politique de Confidentialité</h2>
-                        <p>Cette politique de confidentialité explique comment les informations personnelles sont traitées sur ce site (ci-après dénommé "ce site").</p>
+                        <p>Cette politique de confidentialité explique comment les informations personnelles sont traitées sur le serveur HavenMC et les services connexes (ci-après dénommés "ce service").</p>
 
                         <h2>1. Informations Personnelles Collectées</h2>
-                        <p>Ce site peut collecter les informations personnelles suivantes :</p>
+                        <p>Ce service peut collecter les informations personnelles suivantes :</p>
                         <ul>
-                            <li>Nom et adresse e-mail saisis dans le formulaire de contact</li>
-                            <li>Journaux d'accès (adresse IP, type de navigateur, heure d'accès, etc.)</li>
+                            <li><strong>Informations du Compte Minecraft</strong>
+                                <ul>
+                                    <li>UUID Minecraft (Identifiant Unique)</li>
+                                    <li>ID Minecraft (Nom du Joueur)</li>
+                                    <li>Informations de Skin</li>
+                                </ul>
+                            </li>
+                            <li><strong>Informations Liées à Discord</strong>
+                                <ul>
+                                    <li>ID Discord (Identifiant Utilisateur)</li>
+                                    <li>Nom d'utilisateur Discord</li>
+                                    <li>Historique d'activité dans le serveur Discord</li>
+                                </ul>
+                            </li>
+                            <li><strong>Informations de Connexion au Serveur</strong>
+                                <ul>
+                                    <li>Adresse IP</li>
+                                    <li>Temps de connexion et temps de jeu</li>
+                                    <li>Données de localisation dans le serveur</li>
+                                    <li>Journaux de chat</li>
+                                </ul>
+                            </li>
+                            <li><strong>Données d'Activité en Jeu</strong>
+                                <ul>
+                                    <li>Bâtiments et créations</li>
+                                    <li>Statut de l'inventaire d'objets</li>
+                                    <li>Historique d'activité économique</li>
+                                    <li>Historique des échanges avec d'autres joueurs</li>
+                                </ul>
+                            </li>
+                            <li><strong>Informations Liées au Site Web</strong>
+                                <ul>
+                                    <li>Nom et adresse e-mail saisis dans les formulaires de contact</li>
+                                    <li>Journaux d'accès (adresse IP, type de navigateur, heure d'accès, etc.)</li>
+                                </ul>
+                            </li>
                         </ul>
 
                         <h2>2. Objectif d'Utilisation des Informations Personnelles</h2>
                         <p>Les informations personnelles collectées sont utilisées aux fins suivantes :</p>
                         <ul>
+                            <li>Fonctionnement et gestion du serveur</li>
+                            <li>Authentification et identification des joueurs</li>
+                            <li>Gestion du système économique en jeu</li>
+                            <li>Prévention et traitement de la triche et du harcèlement</li>
+                            <li>Application des règles du serveur</li>
+                            <li>Résolution des conflits entre joueurs</li>
+                            <li>Amélioration du serveur et développement de nouvelles fonctionnalités</li>
                             <li>Répondre aux demandes</li>
-                            <li>Améliorer ce site</li>
                             <li>Créer des données statistiques (dans un format qui ne permet pas d'identifier les individus)</li>
+                            <li>Gestion des activités communautaires</li>
                         </ul>
 
-                        <h2>3. Fourniture d'Informations Personnelles à des Tiers</h2>
-                        <p>Ce site ne fournira pas d'informations personnelles à des tiers, sauf dans les cas suivants :</p>
+                        <h2>3. Période de Conservation des Informations Personnelles</h2>
+                        <p>Les informations personnelles collectées sont stockées pour les périodes suivantes :</p>
+                        <ul>
+                            <li><strong>Données des Joueurs Actifs</strong> : Pendant l'utilisation du serveur et 2 ans après la dernière connexion</li>
+                            <li><strong>Données des Joueurs Bannis</strong> : Stockées de manière permanente (pour prévenir la récurrence d'inconduite)</li>
+                            <li><strong>Journaux de Chat</strong> : 6 mois</li>
+                            <li><strong>Historique des Échanges</strong> : 1 an</li>
+                            <li><strong>Journaux d'Accès au Site Web</strong> : 3 mois</li>
+                        </ul>
+
+                        <h2>4. À Propos de la Suppression des Informations Personnelles</h2>
+                        <p>Sauf dans les cas suivants, nous ne pouvons généralement pas nous conformer aux demandes de suppression des joueurs :</p>
+                        <ul>
+                            <li>Lorsqu'il y a une exigence légale</li>
+                            <li>Lorsque cela n'interfère pas significativement avec les opérations du serveur</li>
+                            <li>Lorsque cela ne porte pas atteinte aux droits d'autres joueurs</li>
+                        </ul>
+                        <p><strong>Raisons de non-suppression :</strong> Pour maintenir l'intégrité du système économique en jeu, la propriété des bâtiments, l'historique des échanges, et pour prévenir la récurrence d'inconduite, de nombreuses données ne peuvent pas être supprimées.</p>
+
+                        <h2>5. Fourniture d'Informations Personnelles à des Tiers</h2>
+                        <p>Ce service ne fournira pas d'informations personnelles à des tiers, sauf dans les cas suivants :</p>
                         <ul>
                             <li>Lorsque le consentement est obtenu de l'individu</li>
                             <li>Lorsque la loi l'exige</li>
+                            <li>Lors de la fourniture à des services tiers de confiance (tels que les fournisseurs d'hébergement) dans le cadre nécessaire au fonctionnement du serveur</li>
                         </ul>
 
-                        <h2>4. Gestion des Informations Personnelles</h2>
-                        <p>Les informations personnelles collectées sont correctement gérées, et les mesures nécessaires sont prises pour prévenir la perte, la falsification, la fuite, etc.</p>
+                        <h2>6. Gestion des Informations Personnelles</h2>
+                        <p>Les informations personnelles collectées sont correctement gérées, et les mesures nécessaires sont prises pour prévenir la perte, la falsification, la fuite, etc. Les données du serveur sont régulièrement sauvegardées et des mesures de sécurité sont mises en place.</p>
 
-                        <h2>5. À Propos des Cookies</h2>
-                        <p>Ce site peut utiliser des cookies. Les cookies sont de petits fichiers texte envoyés par les sites Web aux navigateurs des utilisateurs et stockés sur les ordinateurs des utilisateurs. En utilisant des cookies, nous pouvons enregistrer l'historique de navigation des utilisateurs et les informations saisies, offrant ainsi une expérience de site Web plus confortable. Les utilisateurs peuvent refuser d'accepter les cookies en modifiant les paramètres de leur navigateur.</p>
+                        <h2>7. À Propos des Cookies</h2>
+                        <p>Ce site Web peut utiliser des cookies. Les cookies sont de petits fichiers texte envoyés par les sites Web aux navigateurs des utilisateurs et stockés sur les ordinateurs des utilisateurs. En utilisant des cookies, nous pouvons enregistrer l'historique de navigation des utilisateurs et les informations saisies, offrant ainsi une expérience de site Web plus confortable. Les utilisateurs peuvent refuser d'accepter les cookies en modifiant les paramètres de leur navigateur.</p>
 
-                        <h2>6. À Propos des Journaux d'Accès</h2>
-                        <p>Ce site collecte des journaux d'accès. Les journaux d'accès comprennent l'adresse IP, le type de navigateur, l'heure d'accès, etc. Les journaux d'accès sont utilisés pour analyser et améliorer l'utilisation de ce site.</p>
+                        <h2>8. Intégration avec des Services Externes</h2>
+                        <p>Ce service s'intègre avec les services externes suivants, et leurs politiques de confidentialité respectives peuvent s'appliquer :</p>
+                        <ul>
+                            <li>Discord (Gestion Communautaire)</li>
+                            <li>Minecraft (Service de Jeu)</li>
+                            <li>Divers Services de Plugin et MOD</li>
+                        </ul>
 
-                        <h2>7. Modifications de la Politique de Confidentialité</h2>
-                        <p>Cette politique de confidentialité peut être modifiée si nécessaire. La politique de confidentialité révisée prendra effet à partir du moment où elle sera publiée sur ce site.</p>
+                        <h2>9. À Propos des Informations Personnelles des Mineurs</h2>
+                        <p>Si des individus de moins de 13 ans utilisent le serveur, le consentement parental est requis. Les informations personnelles des mineurs sont traitées avec un soin particulier.</p>
 
-                        <h2>8. Contact</h2>
-                        <p>Pour toute question concernant le traitement des informations personnelles, veuillez nous contacter via le canal dédié sur notre serveur Discord.</p>
+                        <h2>10. Modifications de la Politique de Confidentialité</h2>
+                        <p>Cette politique de confidentialité peut être modifiée si nécessaire. En cas de changements importants, nous notifierons à l'avance dans le serveur et sur le serveur Discord. La politique de confidentialité révisée prendra effet à partir du moment où elle sera publiée sur ce site.</p>
+
+                        <h2>11. Contact</h2>
+                        <p>Pour toute question concernant le traitement des informations personnelles, la vérification, la correction ou les demandes de suppression de données, veuillez nous contacter via le canal dédié sur notre serveur Discord.</p>
                         <p><a href="https://mcdis.ryusei.f5.si" target="_blank">Rejoindre notre serveur Discord</a></p>
 
                         <a href="/index.html" class="back-to-home">Retour à l'Accueil</a>
